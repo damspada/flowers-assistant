@@ -1,18 +1,17 @@
-# Flowers Assistant — IG.3513 Advanced Deep Learning project
+# Flowers Assistant
+IG.3513 Advanced Deep Learning project
 
-Team 10 (TP Group 2) · Dataset: [Oxford Flowers 102](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/)
+Team 10 (TP Group 2)
+Dataset: [Oxford Flowers 102](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/)
 
 A multimodal assistant that combines an ML classifier, a DL classifier, an image generator and an LLM with RAG, integrated with LangChain in a Gradio app.
 
 ## Roles
-
-| Role | Component | Who |
-|---|---|---|
-| 1 | Data pipeline, EDA, ML baseline, coordination | Damiano Spadaccini |
-| 2 | Deep learning classifier | |
-| 3 | Generative model | |
-| 4 | RAG (Ollama) | |
-| 5 | LangChain + Gradio integration | |
+1. Data pipeline, EDA, ML baseline, coordination - Damiano Spadaccini
+2. Deep learning classifier
+3. Generative model
+4. RAG (Ollama)
+5. LangChain + Gradio integration
 
 ## Setup
 
@@ -44,19 +43,21 @@ print(CLASS_NAMES[labels[0]])
 
 ## Interfaces between components
 
-| Function | Input | Output | Role |
-|---|---|---|---|
-| `classify_ml(image)` | PIL image | `{"class_id", "label", "confidence", "probs"}` | 1 |
-| `classify_dl(image)` | PIL image | `{"class_id", "label", "confidence", "probs"}` | 2 |
-| `generate(prompt, ref_image=None)` | text (+ optional PIL image) | PIL image | 3 |
-| `ask_rag(question, predicted_class=None)` | text (+ optional class name) | `{"answer", "sources"}` | 4 |
+- `classify_ml(image)`
+	- Input: PIL image
+	- Output: `{"class_id", "label", "confidence", "probs"}`
+	- Role: 1
+- `classify_dl(image)`
+	- Input: PIL image
+	- Output: `{"class_id", "label", "confidence", "probs"}`
+	- Role: 2
+- `generate(prompt, ref_image=None)`
+	- Input: text (+ optional PIL image)
+	- Output: PIL image
+	- Role: 3
+- `ask_rag(question, predicted_class=None)`
+	- Input: text (+ optional class name)
+	- Output: `{"answer", "sources"}`
+	- Role: 4
 
 `probs` is a list of 102 probabilities in the order of `CLASS_NAMES`.
-
-## Structure
-
-```
-flowers_data.py     shared data pipeline (splits, class names, preprocessing)
-notebooks/          EDA, baseline and experiments
-requirements.txt
-```
