@@ -1,0 +1,13 @@
+# dataset (everyone downloads it with flowers_data.download())
+data/
+
+# large model weights
+*.pt
+*.pth
+*.safetensors
+
+# python / jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env

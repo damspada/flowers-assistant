@@ -1,0 +1,14 @@
+# Python 3.12 — versions used for the project (local PC)
+torch>=2.4
+torchvision>=0.19
+numpy==2.5.3
+scipy==1.18.1
+pillow==12.3.0
+matplotlib==3.11.2
+pandas==3.0.6
+seaborn==0.13.2
+scikit-learn==1.9.1
+scikit-image==0.26.0
+joblib==1.6.0
+tqdm==4.70.1
+ipykernel==7.3.0
